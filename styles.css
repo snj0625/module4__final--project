@@ -1,0 +1,249 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui;
+  color: #243e63;
+}
+figure {
+  width: 100%;
+}
+h1 {
+  font-size: 48px;
+  color: #1a202c;
+  line-height: 1.25;
+}
+.text__purple {
+  color: red;
+}
+.container {
+  padding: 70px 0;
+}
+section {
+  padding: 0 32px;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+  border: none;
+}
+.row {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.nav__img--logo {
+  width: 40px;
+  height: 40px;
+}
+
+.nav__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.nav__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0px;
+  padding: 0 0 4px;
+}
+.nav__logo--title {
+  font-weight: 900;
+  font-size: 24px;
+  margin: 0 0 0 12px;
+  letter-spacing: 0.6px;
+  padding: 0 0 2px;
+  color: #243e63;
+}
+
+
+header .row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__description {
+  width: 40%;
+}
+.header__description--para {
+  margin: 32px 0;
+}
+
+.search__results--heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 24px;
+  margin: 0 0 0 12px;
+  letter-spacing: 0.6px;
+  padding: 0 0 2px;
+  color: #243e63;
+  margin-top: 40px;
+}
+
+.search__bar {
+  width: 100%;
+  max-width: 448px;
+  height: 68px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.search__bar--input {
+  width: 100%;
+  border-radius: 500px;
+  border: 2px solid rgb(229, 231, 235);
+  padding: 20px 192px 20px 32px;
+  color: rgb(36, 62, 99);
+  font-size: 16px;
+  font-weight: 500;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: border-color 300ms;
+}
+.search__bar--btn {
+  z-index: 2;
+  margin: 8px;
+  height: calc(100% - 16px);
+  border-radius: 500px;
+  width: 100px;
+  border: none;
+  background-color: red;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 300ms;
+}
+#search__results {
+  position: relative;
+}
+
+.movie-list {
+  width: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.movie {
+  display: flex;
+  width: calc(100%/3);
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.movie-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.movie-card__container {
+  padding: 2px 16px;
+  
+}
+
+
+/* SMALL PHONES, LARGE SMARTPHONES */
+@media (max-width: 1024px) {
+    
+    header .row{
+    flex-direction: column;
+    align-items: center;
+  }
+    .header__description{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 512px;
+    margin: 0 auto;
+  }
+    h1{
+    font-size: 30px;
+  }
+    .header__description--para{
+      margin:20px 0;
+    font-size: 16px;
+  }
+}
+ /*ipads and tablets*/
+@media (max-width: 768px){
+ .movie-list {
+  display: flex;
+  justify-content: space-around;
+  }
+  .movie {
+    width: auto;
+    max-width: 384px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .row {
+    flex-direction: column-reverse;
+  }
+  .search__bar {
+    max-width: 70%;
+  }
+.search__bar--input {
+    padding: 20px 140px 20px 32px;
+  } 
+  h1{
+    font-size: 50px;
+  }
+  .search__results--heading {
+    font-size: 40px;
+  } 
+}
+/*SMALL PHONES*/
+@media (max-width: 640px) {
+  .container {
+        padding: 0px 0;
+  }
+  .header__description--para {
+    font-size: 14px;
+  }
+ 
+  .header__description {
+    font-size: 30px;
+  }
+  .btn {
+    line-height: 1.5;
+  }
+  
+  .btn{
+    margin-right: 0px;
+    margin-top: 16px;
+  }
+  
+}
