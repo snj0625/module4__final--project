@@ -1,62 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Open Movie Database</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/ef8487049e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Open Movie Database</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://kit.fontawesome.com/ef8487049e.js" crossorigin="anonymous"></script>
-  <script src="index.js" defer></script>
-</head>
-
-<body>
-  <section id="landing">
-    <nav>
-      <div class="nav__container">
-        <div class="nav__logo">
-                    <img class="nav__img--logo" src="./assets/movie_logo.png" alt="logo" />
-          <div class="nav__logo--title">The OMDb</div>
+  <body>
+    <section id="landing">
+      <nav>
+        <div class="nav__container">
+          <div class="nav__logo">
+            <img
+              class="nav__img--logo"
+              src="./assets/movie_logo.png"
+              alt="logo"
+            />
+            <div class="nav__logo--title">The OMDb</div>
+          </div>
         </div>
-      </div>
-    </nav>
-    <header>
+      </nav>
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="header__description">
+              <a href="/index.html"> </a>
+              <label class="movie__search--label">
+                <h1>Browse <span class="text__purple"> Movies</span></h1>
+              </label>
+              <p class="header__description--para">
+                Your place to find information about movies, TV shows, and more.
+              </p>
+            </div>
+            <div class="search__bar">
+              <input
+                type="text"
+                class="search__bar--input"
+                placeholder="Search Movies..."
+                onchange="onSearchMovie(event)"
+              />
+              <button class="search__bar--btn" onclick="onSearchMovie()">
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <section id="search__results">
+      <h3 class="search__results--heading"> Search Results </h3>
       <div class="container">
-        <div class="row">
-          <div class="header__description">
-            <a href="/index.html"> </a>
-            <label class="movie__search--label">
-              <h1>Browse <span class="text__purple"> Movies</span> </h1>
-            </label>
-            <p class="header__description--para">
-              Your place to find information about movies, TV shows, and more.
-            </p>
-          </div>
-          <div class="search__bar">
-            <input type="text" class="search__bar--input"placeholder="Search Movies Here..." onchange="onSearchMovie(event)" />
-            <button class="search__bar--btn" onclick="onSearchMovie()">Search </button>
-          </div>
-        </div>
-      </div>
-    </header>
-  </section>
-
-  <section id="search__results">
-    <h3 class="search__results--heading">Search Results</h3>
-    <div class="container">
-      <div class="row__narrow">
-        <div class="movie-list">
-          <div class="movie">
-            <div class="movie-card">
-              <div class="movie-card__container">
-
+        <div class="row__narrow">
+          <div class="movie-list">
+            <div class="movie">
+              <div class="movie-card">
+                <div class="movie-card__container">
+                  <div class="loading__icon--container">
+                    <i class="fa-solid fa-spinner loading__icon--spinner"></i>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</body>
-
+    </section>
+  </body>
 </html>
