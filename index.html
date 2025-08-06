@@ -55,16 +55,23 @@
     </section>
 
     <section id="search__results">
-      <h3 class="search__results--heading"> Search Results </h3>
       <div class="container">
         <div class="row__narrow">
+          <div class="search__results--heading">
+          <h3 class = "search__results--title"> Search Results: </h3>
+          <select id="filter" onchange = 'sortMovies(event)' class="sort__select">
+              <option value="filter__title" disabled selected>Filter</option>
+              <option value="a__z--order"> A - Z</option>
+              <option value="z__a--order"> Z - A</option>
+              <option value="new__old--order"> Newest - Oldest</option>
+              <option value="old__new--order"> Oldest - Newest</option>
+            </select>
+            </div>
           <div class="movie-list">
             <div class="movie">
               <div class="movie-card">
                 <div class="movie-card__container">
-                  <div class="loading__icon--container">
-                    <i class="fa-solid fa-spinner loading__icon--spinner"></i>
-                  </div>
+                 
                 </div>
               </div>
             </div>

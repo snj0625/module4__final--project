@@ -14,16 +14,11 @@ function movieHTML(movie) {
 // This function fetches movie data from the OMDB API based on the search title
 async function fetchMovieData(searchTitle) {
 
-// Show the loading spinner while fetching data
 const movieListEl = document.querySelector('.movie-list');
-movieListEl.classList.add('loading__icon--spinner'); 
 
 // Fetch movie data from the OMDB API   
 const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=76fae4ba&s=${searchTitle}`);
 const movieData = await movies.json();
-
-// Hide the loading spinner after fetching data             
-movieListEl.classList.remove('loading__icon--spinner');
 
 
 // If the API returns a list of movies, we will generate the HTML for each movie and display it
@@ -41,5 +36,31 @@ async function onSearchMovie(event){
 const title = event.target.value;
 
 movies = await fetchMovieData(title);
+
+
+}
+
+function sortMovies(event) {
+    
+    const sortType = event.target.value;
+    
+    const movieListEl = document.querySelector('.movie-list');
+    
+    const movies = Array.from(movieListEl.children);
+
+    if (sortType === 'a__z--order') {
+        movies.sort((a, b) => a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent));
+    } else if (sortType === 'z__a--order') {
+        movies.sort((a, b) => b.querySelector('h3').textContent.localeCompare(a.querySelector('h3').textContent));
+    } else if (sortType === 'new__old--order') {
+        movies.sort((a, b) => b.querySelector('p').textContent.localeCompare(a.querySelector('p').textContent));
+    }
+    else if (sortType === 'old__new--order') {
+        movies.sort((a, b) => a.querySelector('p').textContent.localeCompare(b.querySelector('p').textContent));
+    }
+
+    movieListEl.innerHTML = '';
+    movies.forEach(movie => movieListEl.appendChild(movie));
+
 
 }
